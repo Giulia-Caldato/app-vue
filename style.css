@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    font-family: arial;
+    background-color: #afc451;
+  }
+  
+  .app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 500px 100px 1fr;
+    grid-template-areas: 
+      "title title"
+      "img img"
+      "nope fav"
+      "favourites favourites";
+    height: 100vh;
+  }
+  
+  .title {
+    grid-area: title;
+    font-size: 2em;
+    text-align: center;
+    color: rgb(14, 145, 206);
+  }
+  
+  .img {
+    grid-area: img;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: 500px;
+    margin: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  
+  button {
+    width: 70px;
+    height: 70px;
+    margin: 20px 5px;
+    border: 8px solid rgb(203, 206, 21);
+    border-radius: 50%;
+    color: transparent;
+    cursor: pointer;
+  }
+  
+  .nope {
+    grid-area: nope;
+    background: url("https://cdn.glitch.com/381dc777-702c-41b2-82aa-cac2e30d38de%2Funchecked.png?1522935023612") rgb(9, 49, 226) center no-repeat;
+    background-size: 20px;
+    justify-self: end;  
+  }
+  
+  .nope:hover,
+  .remove:hover {
+    background-color: #b4388b;
+  }
+  
+  .fav {
+    grid-area: fav;
+    background: url("https://cdn.glitch.com/381dc777-702c-41b2-82aa-cac2e30d38de%2Fchecked%20(1).png?1522935023792") #63dd9a center no-repeat;
+    background-size: 26px;
+  }
+  
+  .fav:hover {
+    background-color: #51c384;
+  }
+  
+  h2 {
+    text-align: center;
+    color: rgb(190, 133, 9);
+  }
+  
+  .favourites {
+    grid-area: favourites;
+    overflow-y: auto;
+  }
+  
+  .favourites-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .favourites-item {
+    position: relative;
+    list-style: none;
+    margin: 15px;
+  }
+  
+  .favourites-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .remove {
+    position: absolute;
+    bottom: -8px;
+    right: -15px;
+    height: 30px;
+    width: 30px;
+    margin: 0;
+    border: 2px solid white;
+    background: url("https://cdn.glitch.com/381dc777-702c-41b2-82aa-cac2e30d38de%2Funchecked.png?1522935023612") tomato no-repeat center;
+    background-size: 10px;
+  }
+  

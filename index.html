@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The Image Vue App</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div id="app" class="app">
+      <h1 class="title">Imagegram</h1>
+      <img :src="currentImageUrl" alt="Surprise" class="card">
+      <button @click="loadImage" class="nope">Next</button>
+      <button @click="addFave" class="fav">Fave</button>
+      <section class="favourites">
+        <h2>Favourite Images</h2>
+        <ul class="favourites-list">
+          <li v-for="image in favourites" class="favourite-item">
+            <img :src="image"> alt="a favourite image" class="favourites-img"/>
+            <button @click="removeFave(image)" class="remove">Remove</button>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
